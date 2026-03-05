@@ -3,14 +3,14 @@ import java.awt.*;
 
 public class CifradoCesarClasico extends JFrame {
     
-    // Matriz Única Clásica (3x9 = 27 posiciones)
+    // Matriz  (3x9 = 27 posiciones)
     private final char[][] matriz = {
         {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'},
         {'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q'},
         {'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', ' '}
     };
 
-    // --- NUEVA PALETA DE COLORES (Blanco y Azul) ---
+   
     private final Color fondoBlanco = new Color(255, 255, 255);
     private final Color fondoGrisClaro = new Color(245, 248, 250);
     private final Color azulPrincipal = new Color(0, 102, 204);
@@ -63,7 +63,7 @@ public class CifradoCesarClasico extends JFrame {
         txtLlave.setBorder(BorderFactory.createLineBorder(azulPrincipal));
         txtLlave.setMaximumSize(new Dimension(100, 30));
 
-        // --- BOTÓN (Corrección de color aquí) ---
+        
         JButton btnAccion = new JButton(esCifrado ? "EJECUTAR CIFRADO" : "EJECUTAR DESCIFRADO");
         btnAccion.setFocusPainted(false);
         btnAccion.setBackground(azulPrincipal); 
@@ -71,7 +71,7 @@ public class CifradoCesarClasico extends JFrame {
         btnAccion.setFont(fuenteModerna);
         btnAccion.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
-        // --- BARRA DE CARGA ---
+     
         JProgressBar barraCarga = new JProgressBar(0, 100);
         barraCarga.setForeground(azulPrincipal);
         barraCarga.setBackground(fondoGrisClaro);
@@ -79,7 +79,7 @@ public class CifradoCesarClasico extends JFrame {
         barraCarga.setVisible(false);
         barraCarga.setMaximumSize(new Dimension(Integer.MAX_VALUE, 20));
 
-        // --- SALIDA ---
+      
         JTextArea areaSalida = new JTextArea(10, 20);
         estilizarArea(areaSalida);
         areaSalida.setEditable(false);
@@ -170,4 +170,5 @@ public class CifradoCesarClasico extends JFrame {
         try { UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); } catch (Exception e) {}
         SwingUtilities.invokeLater(() -> new CifradoCesarClasico().setVisible(true));
     }
+
 }
