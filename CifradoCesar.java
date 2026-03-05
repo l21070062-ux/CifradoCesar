@@ -70,17 +70,17 @@ public class CifradoCesar extends JFrame {
         txtLlave.setBorder(BorderFactory.createLineBorder(azulBoton));
         txtLlave.setMaximumSize(new Dimension(100, 40));
 
-        // --- CORRECCIÓN DEL BOTÓN ---
+        
         JButton btnAccion = new JButton(esCifrado ? "EJECUTAR CIFRADO" : "EJECUTAR DESCIFRADO");
         btnAccion.setFocusPainted(false);
         btnAccion.setBackground(azulBoton);
-        btnAccion.setForeground(Color.WHITE); // Texto blanco para máximo contraste
+        btnAccion.setForeground(Color.WHITE); 
         btnAccion.setFont(new Font("Segoe UI", Font.BOLD, 15));
         btnAccion.setCursor(new Cursor(Cursor.HAND_CURSOR));
         btnAccion.setMaximumSize(new Dimension(300, 50));
 
         JProgressBar barraCarga = new JProgressBar(0, 100);
-        barraCarga.setForeground(new Color(0, 153, 76)); // Verde para la carga
+        barraCarga.setForeground(new Color(0, 153, 76)); 
         barraCarga.setVisible(false);
 
         JTextArea areaSalida = new JTextArea(10, 20);
@@ -162,8 +162,9 @@ public class CifradoCesar extends JFrame {
     }
 
     public static void main(String[] args) {
-        // Forzamos el LookAndFeel para que los colores se respeten
+       
         try { UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName()); } catch (Exception e) {}
         SwingUtilities.invokeLater(() -> new CifradoCesar().setVisible(true));
     }
+
 }
