@@ -19,7 +19,7 @@ public class DesifradoCesar {
                 for (char c : mensaje.toCharArray()) {
                     int pos = ALFABETO.indexOf(c);
                     if (pos != -1) {
-                        // Formula: (Posición - Llave + Tamaño) % Tamaño
+                        
                         int nuevaPos = (pos - llave + ALFABETO.length()) % ALFABETO.length();
                         resultado.append(ALFABETO.charAt(nuevaPos));
                     } else {
@@ -40,4 +40,5 @@ public class DesifradoCesar {
         }
         sc.close();
     }
+
 }
